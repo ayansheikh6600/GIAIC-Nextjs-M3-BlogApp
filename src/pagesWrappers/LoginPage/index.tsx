@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
 
 const gradientColors = {
   default: ['#8750f7', '#0f0715'],
@@ -10,6 +11,7 @@ const gradientColors = {
 };
 
 const LoginPage = () => {
+  const router = useRouter()
   const [rememberMe, setRememberMe] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,7 +34,7 @@ const LoginPage = () => {
       const token = res.data.token;
       Cookies.set('authToken', token, { expires: rememberMe ? 7 : 1 });
       console.log('Login successful, token saved in cookies');
-
+      router.replace("/dashboard")
     } catch (error) {
       console.error("Error logging in:", error);
     }
