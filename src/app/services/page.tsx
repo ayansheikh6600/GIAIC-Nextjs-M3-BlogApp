@@ -1,9 +1,9 @@
-import { About } from '@/pagesWrappers'
+import { Services } from '@/pagesWrappers'
 import React from 'react'
 
 const page = () => {
   return (
-   <About/>
+    <Services/>
   )
 }
 
