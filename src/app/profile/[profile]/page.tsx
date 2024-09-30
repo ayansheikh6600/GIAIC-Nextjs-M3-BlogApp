@@ -7,6 +7,7 @@ const page = ({params}:any) => {
   return (
     <div className='h-dvh flex justify-center items-center'>
     <ProfileCard/>
+    
     </div>
   )
 }
